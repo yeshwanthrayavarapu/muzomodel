@@ -32,8 +32,6 @@ from ..utils.utils import dict_from_config
 from .encodec import (CompressionModel, EncodecModel,
                       InterleaveStereoCompressionModel)
 from .lm import LMModel
-from .lm_magnet import MagnetLMModel
-from .unet import DiffusionUnet
 
 
 def get_quantizer(
@@ -112,7 +110,7 @@ def get_lm_model(cfg: omegaconf.DictConfig) -> LMModel:
             )
 
         pattern_provider = get_codebooks_pattern_provider(n_q, codebooks_pattern_cfg)
-        lm_class = MagnetLMModel if cfg.lm_model == "transformer_lm_magnet" else LMModel
+        lm_class = LMModel if cfg.lm_model == "transformer_lm_magnet" else LMModel
         return lm_class(
             pattern_provider=pattern_provider,
             condition_provider=condition_provider,
@@ -235,11 +233,6 @@ def get_debug_compression_model(device="cpu", sample_rate: int = 32000):
     return compression_model.eval()
 
 
-def get_diffusion_model(cfg: omegaconf.DictConfig):
-    # TODO Find a way to infer the channels from dset
-    channels = cfg.channels
-    num_steps = cfg.schedule.num_steps
-    return DiffusionUnet(chin=channels, num_steps=num_steps, **cfg.diffusion_unet)
 
 
 def get_processor(cfg, sample_rate: int = 24000):
