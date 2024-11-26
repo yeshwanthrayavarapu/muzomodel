@@ -17,7 +17,7 @@ AUTHOR = 'HC & YR'
 EMAIL = '@muzo.ai'
 REQUIRES_PYTHON = '>=3.8.0'
 
-for line in open('audiocraft/__init__.py'):
+for line in open('muzo/__init__.py'):
     line = line.strip()
     if '__version__' in line:
         context = {}
@@ -49,8 +49,8 @@ setup(
         'dev': ['coverage', 'flake8', 'mypy', 'pdoc3', 'pytest'],
         'wm': ['audioseal'],
     },
-    packages=[p for p in find_packages() if p.startswith('audiocraft')],
-    package_data={'audiocraft': ['py.typed']},
+    packages=[p for p in find_packages() if p.startswith('muzo')],
+    package_data={'muzo': ['py.typed']},
     include_package_data=True,
     license='MIT License',
     classifiers=[

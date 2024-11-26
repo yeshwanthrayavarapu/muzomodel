@@ -4,7 +4,7 @@ include LICENSE_weights
 include *.md
 include *.ini
 include requirements.txt
-include audiocraft/py.typed
+include muzo/py.typed
 include assets/*.mp3
 include datasets/*.mp3
 recursive-include config *.yaml

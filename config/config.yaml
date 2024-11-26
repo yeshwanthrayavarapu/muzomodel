@@ -1,4 +1,4 @@
-# WARNING: This is the base configuration file shared across ALL solvers in AudioCraft
+# WARNING: This is the base configuration file shared across ALL solvers in muzo
 # Please don't update this file directly. Instead use distinct configuration files
 # to override the below configuration.
 defaults:
@@ -57,7 +57,7 @@ slurm:
 # dora parameters
 dora:
   # Output folder for all artifacts of an experiment.
-  dir: /checkpoint/${oc.env:USER}/experiments/audiocraft/outputs
+  dir: /checkpoint/${oc.env:USER}/experiments/muzo/outputs
   # The following entries will be ignored by dora when computing the unique XP signature.
   # Note that slurm.* and dora.* are automatically ignored.
   exclude: [

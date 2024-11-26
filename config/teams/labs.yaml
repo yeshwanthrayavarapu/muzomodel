@@ -1,28 +1,28 @@
 aws:
-  dora_dir: /fsx-audio-craft-llm/${oc.env:USER}/experiments/audiocraft/outputs
+  dora_dir: /fsx-audio-craft-llm/${oc.env:USER}/experiments/muzo/outputs
   partitions:
     global: learnlab
     team: learnlab
-  reference_dir: /fsx-audio-craft-llm/shared/audiocraft/reference
+  reference_dir: /fsx-audio-craft-llm/shared/muzo/reference
   dataset_mappers:
     "^/checkpoint/[a-z]+": "/fsx-audio-craft-llm"
 fair:
-  dora_dir: /checkpoint/${oc.env:USER}/experiments/audiocraft/outputs
+  dora_dir: /checkpoint/${oc.env:USER}/experiments/muzo/outputs
   partitions:
     global: learnlab
     team: learnlab
-  reference_dir: /large_experiments/audiocraft/reference
+  reference_dir: /large_experiments/muzo/reference
   dataset_mappers:
     "^/datasets01/datasets01": "/datasets01"
 darwin:
-  dora_dir: /tmp/audiocraft_${oc.env:USER}
+  dora_dir: /tmp/muzo_${oc.env:USER}
   partitions:
     global: debug
     team: debug
   reference_dir: /tmp
 rsc:
-  dora_dir: /checkpoint/audiocraft/${oc.env:USER}/experiments/audiocraft/outputs
+  dora_dir: /checkpoint/muzo/${oc.env:USER}/experiments/muzo/outputs
   partitions:
     global: learn
     team: learn
-  reference_dir: /checkpoint/audiocraft/shared/reference
+  reference_dir: /checkpoint/muzo/shared/reference
