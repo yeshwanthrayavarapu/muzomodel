@@ -9,12 +9,12 @@ from pathlib import Path
 from setuptools import setup, find_packages
 
 
-NAME = 'Muzo'
-DESCRIPTION = 'Audio generation'
+NAME = 'audiocraft'
+DESCRIPTION = 'Audio generation research library for PyTorch'
 
-URL = 'https://github.com/yeshwanthrayavarapu/muzomodel'
-AUTHOR = 'HC & YR'
-EMAIL = '@muzo.ai'
+URL = 'https://github.com/facebookresearch/audiocraft'
+AUTHOR = 'FAIR Speech & Audio'
+EMAIL = 'defossez@meta.com, jadecopet@meta.com'
 REQUIRES_PYTHON = '>=3.8.0'
 
 for line in open('audiocraft/__init__.py'):
